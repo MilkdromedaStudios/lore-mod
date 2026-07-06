@@ -1,0 +1,83 @@
+{
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "scout.root",
+        "npc_name": { "rawtext": [{ "text": "§2Kestrel Thorn, Scout§r" }] },
+        "on_open_commands": ["/playsound mob.villager.idle @initiator ~ ~ ~ 0.4"],
+        "text": {
+          "rawtext": [
+            {
+              "text": "Don't stand in the open like that — you make a lovely target.\n\nKestrel Thorn. I watch the treeline so the rest of them can sleep. Been counting campfires in the hills for a fortnight, and every night there's more. The Corrupted aren't wandering. They're §omustering§r."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eWhat have you seen out there?§r" }] },
+            "commands": ["/dialogue open @s @initiator scout.lore"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eWhere do you need me?§r" }] },
+            "commands": ["/dialogue open @s @initiator scout.quests"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§cSignal the caravan. I'm ready.§r" }] },
+            "commands": ["/scriptevent lore:quest begin_escort"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Keep your head down, Kestrel." }] },
+            "commands": ["/dialogue close @s @initiator"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "scout.lore",
+        "npc_name": { "rawtext": [{ "text": "§2Kestrel Thorn, Scout§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Three nights ago I got close enough to one of their camps to hear them. They don't talk. They §ohum§r — all of them, the same low note, like a swarm deciding something.\n\nAnd here's what froze me: one of them was wearing my old captain's coat. Lost him five years back in the eastern pass, buried him myself. Whatever is filling those bodies, it isn't picky about where it finds them.\n\nThe big one — the one with the banner — the others part around him like water. If we cut §ohim§r down, I'd wager the rest lose their nerve. If they still have nerve to lose."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator scout.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "scout.quests",
+        "npc_name": { "rawtext": [{ "text": "§2Kestrel Thorn, Scout§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Two things, and both matter.\n\n§6Perimeter Patrol§r — walk the four watch posts at the compass points of the village. I need fresh eyes confirming my markers still stand. Finish the circuit and my §aScout's Beacon§r is yours — it has pulled me out of the dark more times than I can count.\n\n§6The Last Caravan§r — Orin's supply cart is the final one before the siege. The Corrupted will hit it; they always do. Accept the job, then tell me to signal the caravan when your blade is loose in its sheath. §oKeep Orin alive.§r"
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Perimeter Patrol§r" }] },
+            "commands": ["/scriptevent lore:quest accept perimeter_patrol"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: The Last Caravan§r" }] },
+            "commands": ["/scriptevent lore:quest accept the_last_caravan"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
+            "commands": ["/scriptevent lore:quest status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator scout.root"]
+          }
+        ]
+      }
+    ]
+  }
+}

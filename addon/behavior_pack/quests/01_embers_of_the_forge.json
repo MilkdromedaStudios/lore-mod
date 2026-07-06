@@ -1,0 +1,39 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "embers_of_the_forge",
+    "name": "Embers of the Forge",
+    "type": "gathering",
+    "giver": "lore:blacksmith_brenna",
+    "description": "Brenna Ironsong's forge has gone cold, and a village without a forge cannot survive a siege. Gather 16 iron ingots so she can relight it and arm Elderfall's defenders.",
+    "prerequisites": [],
+    "steps": [
+      "Speak with Brenna Ironsong at the forge and accept the quest.",
+      "Gather 16 iron ingots by mining, smelting, or trade.",
+      "Return to Brenna and turn in the ingots through her dialogue."
+    ],
+    "objective": {
+      "kind": "gather",
+      "items": [
+        {
+          "id": "minecraft:iron_ingot",
+          "count": 16
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "minecraft:emerald",
+          "count": 10
+        }
+      ],
+      "xp_levels": 2,
+      "reputation": 5
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted embers_of_the_forge",
+      "on_complete": "lore:quest_completed embers_of_the_forge"
+    }
+  }
+}

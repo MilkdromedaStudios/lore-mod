@@ -1,0 +1,57 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "echoes_beneath",
+    "name": "Echoes Beneath",
+    "type": "investigation",
+    "giver": "lore:historian_maelis",
+    "description": "The glyphs on the ruins rewrote themselves the night before the Awoken arrived. Maelis Vane needs someone with younger knees \u2014 and older destiny \u2014 to stand before three ruin fragments and listen.",
+    "prerequisites": [],
+    "steps": [
+      "Accept the quest from Maelis Vane in her archive.",
+      "Visit the Sunken Archway east of the village.",
+      "Visit the Shattered Bell Tower west of the village.",
+      "Visit the Moss-bound Obelisk south of the village.",
+      "The quest completes automatically at the final site."
+    ],
+    "objective": {
+      "kind": "visit",
+      "radius": 8,
+      "sites": [
+        {
+          "label": "Sunken Archway",
+          "dx": 35,
+          "dz": -28
+        },
+        {
+          "label": "Shattered Bell Tower",
+          "dx": -42,
+          "dz": 18
+        },
+        {
+          "label": "Moss-bound Obelisk",
+          "dx": 12,
+          "dz": 47
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "minecraft:emerald",
+          "count": 8
+        },
+        {
+          "id": "minecraft:book",
+          "count": 3
+        }
+      ],
+      "xp_levels": 3,
+      "reputation": 8
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted echoes_beneath",
+      "on_complete": "lore:quest_completed echoes_beneath"
+    }
+  }
+}

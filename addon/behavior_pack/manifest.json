@@ -1,0 +1,39 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Elderfall Lore Mod - Behavior Pack",
+    "description": "The Chronicle of Elderfall: quests, villagers, dialogue, and the raid-defense of the frontier village built on ancient ruins.",
+    "uuid": "78aa7635-7f7d-4013-8e80-b02992f78c3a",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "766ed1ce-8e9a-4383-b97b-bba2c0b817d1",
+      "version": [1, 0, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "ef31bec3-8921-4c7b-9500-3a97fa3235b3",
+      "entry": "scripts/main.js",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "24a620c7-890b-4736-a65e-2ea838288715",
+      "version": [1, 0, 0]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.11.0"
+    }
+  ],
+  "metadata": {
+    "authors": ["Milkdromeda Studios"],
+    "license": "MIT",
+    "url": "https://github.com/MilkdromedaStudios/lore-mod"
+  }
+}

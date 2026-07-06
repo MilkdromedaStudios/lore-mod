@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "lore:scouts_beacon",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "lore_scouts_beacon"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "§aScout's Beacon"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:rarity": "rare",
+      "minecraft:cooldown": {
+        "category": "lore_scouts_beacon",
+        "duration": 30.0
+      }
+    }
+  }
+}

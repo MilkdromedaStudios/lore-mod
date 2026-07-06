@@ -1,0 +1,28 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Elderfall Lore Mod - Resource Pack",
+    "description": "Textures, models, sounds and text for the Chronicle of Elderfall: the Awoken, the Corrupted, and the village that stands between them.",
+    "uuid": "24a620c7-890b-4736-a65e-2ea838288715",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "eda9847e-da87-4df1-953c-53fa77120082",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "78aa7635-7f7d-4013-8e80-b02992f78c3a",
+      "version": [1, 0, 0]
+    }
+  ],
+  "metadata": {
+    "authors": ["Milkdromeda Studios"],
+    "license": "MIT",
+    "url": "https://github.com/MilkdromedaStudios/lore-mod"
+  }
+}

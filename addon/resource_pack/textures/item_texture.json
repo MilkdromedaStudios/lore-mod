@@ -1,0 +1,15 @@
+{
+  "resource_pack_name": "Elderfall Lore Mod - Resource Pack",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "lore_elderfall_defenders_blade": {
+      "textures": "textures/items/elderfall_defenders_blade"
+    },
+    "lore_awoken_charm": {
+      "textures": "textures/items/awoken_charm"
+    },
+    "lore_scouts_beacon": {
+      "textures": "textures/items/scouts_beacon"
+    }
+  }
+}

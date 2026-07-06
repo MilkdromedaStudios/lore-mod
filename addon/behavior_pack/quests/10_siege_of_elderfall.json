@@ -1,0 +1,42 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "siege_of_elderfall",
+    "name": "The Siege of Elderfall",
+    "type": "raid_defense",
+    "giver": "lore:mayor_aldric",
+    "description": "The walls are shored, the forge sings, and the Hollow King's warband descends. Sound the horn, stand with the Elderfall Guardians, and break four waves of the Corrupted \u2014 captain and all.",
+    "prerequisites": [
+      "hold_the_line",
+      "bulwarks_of_elderfall"
+    ],
+    "steps": [
+      "Complete 'Hold the Line' and 'Bulwarks of Elderfall'.",
+      "Accept the quest from Mayor Aldric Veyne.",
+      "Choose 'Sound the horn' in Aldric's dialogue to begin the raid.",
+      "Survive all four waves and slay the Raider Captain.",
+      "The quest completes automatically at the raid victory."
+    ],
+    "objective": {
+      "kind": "raid"
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "minecraft:totem_of_undying",
+          "count": 1
+        },
+        {
+          "id": "minecraft:emerald",
+          "count": 24
+        }
+      ],
+      "xp_levels": 8,
+      "reputation": 25
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted siege_of_elderfall",
+      "on_complete": "lore:quest_completed siege_of_elderfall"
+    }
+  }
+}

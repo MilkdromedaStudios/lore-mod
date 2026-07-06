@@ -1,0 +1,79 @@
+{
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "healer.root",
+        "npc_name": { "rawtext": [{ "text": "§dLiora Dawnpetal, Healer§r" }] },
+        "on_open_commands": ["/playsound block.sweet_berry_bush.pick @initiator ~ ~ ~ 0.4"],
+        "text": {
+          "rawtext": [
+            {
+              "text": "Sit, sit — you look like you've been sleeping in your armor. Everyone does, lately.\n\nI'm Liora. I mend what the hills break: fevers, fractures, and the nightmares people have started having since the lanterns burned blue. My shelves, however, are nearly bare, and a village cannot survive a siege on courage and thin soup."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eNightmares? Tell me more.§r" }] },
+            "commands": ["/dialogue open @s @initiator healer.lore"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eWhat do your shelves need?§r" }] },
+            "commands": ["/dialogue open @s @initiator healer.quests"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Rest well, Liora." }] },
+            "commands": ["/dialogue close @s @initiator"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "healer.lore",
+        "npc_name": { "rawtext": [{ "text": "§dLiora Dawnpetal, Healer§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Every patient describes the same dream. A field of pale stone under a black sky. A crown resting on an empty throne — §orusted through§r, though the old story swears it never could rust. And a voice beneath the floor asking, politely, to be let up.\n\nMy grandmother healed in this village before me, and her grandmother before her. Their journals mention the dream too — but only once a century, and only ever in the week before the shrine... §oexhaled§r. Their word, not mine.\n\nI don't need a historian to tell me what it means. I need my shelves full §obefore§r it happens."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator healer.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "healer.quests",
+        "npc_name": { "rawtext": [{ "text": "§dLiora Dawnpetal, Healer§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "§6The Healer's Harvest§r — I need §f12 sweet berries§r for salves and syrups, and — don't make that face — §f4 spider eyes§r. Diluted properly, the venom quiets pain and lets the wounded sleep through the worst of it.\n\nBring them to me and you'll have golden apples from my own reserve. And every fighter you keep standing in the siege will have my shelves to thank as much as your sword."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: The Healer's Harvest§r" }] },
+            "commands": ["/scriptevent lore:quest accept healers_harvest"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bTurn in: The Healer's Harvest§r" }] },
+            "commands": ["/scriptevent lore:quest turnin healers_harvest"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
+            "commands": ["/scriptevent lore:quest status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator healer.root"]
+          }
+        ]
+      }
+    ]
+  }
+}

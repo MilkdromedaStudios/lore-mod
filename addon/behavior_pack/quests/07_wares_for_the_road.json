@@ -1,0 +1,44 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "wares_for_the_road",
+    "name": "Wares for the Road",
+    "type": "gathering",
+    "giver": "lore:trader_orin",
+    "description": "Orin Fairwind lost half his stock with his second wagon. Replace 10 leather and 5 string so the trader can keep Elderfall supplied through the siege.",
+    "prerequisites": [],
+    "steps": [
+      "Speak with Orin Fairwind and accept the quest.",
+      "Gather 10 leather from cattle or fishing.",
+      "Gather 5 string from spiders or cobwebs.",
+      "Return to Orin and turn in the goods through his dialogue."
+    ],
+    "objective": {
+      "kind": "gather",
+      "items": [
+        {
+          "id": "minecraft:leather",
+          "count": 10
+        },
+        {
+          "id": "minecraft:string",
+          "count": 5
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "minecraft:emerald",
+          "count": 8
+        }
+      ],
+      "xp_levels": 2,
+      "reputation": 4
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted wares_for_the_road",
+      "on_complete": "lore:quest_completed wares_for_the_road"
+    }
+  }
+}

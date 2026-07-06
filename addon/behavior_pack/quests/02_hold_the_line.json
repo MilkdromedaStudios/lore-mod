@@ -1,0 +1,39 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "hold_the_line",
+    "name": "Hold the Line",
+    "type": "defense",
+    "giver": "lore:blacksmith_brenna",
+    "description": "Brenna will not forge for a cause that cannot win. Prove the Corrupted can bleed: slay 10 Corrupted Raiders in the hills around Elderfall, and the first blade off her rekindled anvil is yours.",
+    "prerequisites": [
+      "embers_of_the_forge"
+    ],
+    "steps": [
+      "Accept the quest from Brenna Ironsong after relighting her forge.",
+      "Slay 10 Corrupted Raiders (raid waves and ambushes count).",
+      "The quest completes automatically on the tenth kill."
+    ],
+    "objective": {
+      "kind": "kill",
+      "targets": [
+        "lore:corrupted_raider"
+      ],
+      "count": 10
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:elderfall_defenders_blade",
+          "count": 1
+        }
+      ],
+      "xp_levels": 3,
+      "reputation": 10
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted hold_the_line",
+      "on_complete": "lore:quest_completed hold_the_line"
+    }
+  }
+}
