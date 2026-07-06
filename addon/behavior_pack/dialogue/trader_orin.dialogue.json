@@ -1,0 +1,79 @@
+{
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "trader.root",
+        "npc_name": { "rawtext": [{ "text": "§eOrin Fairwind, Trader§r" }] },
+        "on_open_commands": ["/playsound mob.villager.yes @initiator ~ ~ ~ 0.5"],
+        "text": {
+          "rawtext": [
+            {
+              "text": "Ah! A customer! Or a bodyguard! Honestly, at this point I'll take either.\n\nOrin Fairwind, purveyor of everything a besieged village forgets it needs until it desperately needs it. I've run the hill roads for twenty years and I have never — §onever§r — seen them this quiet. Quiet roads mean someone's waiting on them."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eWhy keep running the roads?§r" }] },
+            "commands": ["/dialogue open @s @initiator trader.lore"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eNeed anything besides a bodyguard?§r" }] },
+            "commands": ["/dialogue open @s @initiator trader.quests"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Safe roads, Orin." }] },
+            "commands": ["/dialogue close @s @initiator"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "trader.lore",
+        "npc_name": { "rawtext": [{ "text": "§eOrin Fairwind, Trader§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "My father traded on these roads, and his mother before him. Fairwinds have been supplying Elderfall since the first roof went up on the ruins.\n\nGrandmother had a rule she beat into every one of us: §o\"Sell them anything, but never take payment in memories.\"§r I used to think it was a joke about hagglers with sob stories. Then last month, at the crossroads, a man in a rusted helm offered me a chest of gold for — and I quote — §o\"one summer afternoon, any one you can spare.\"§r\n\nI declined. I ran the horses half to death getting here. And now I sell rope and lanterns to the last village standing between §ohim§r and everything I remember."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator trader.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "trader.quests",
+        "npc_name": { "rawtext": [{ "text": "§eOrin Fairwind, Trader§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "As it happens — §6Wares for the Road§r. My stock of §f10 leather§r and §f5 string§r vanished with my second wagon. Replace it and I'll pay in emeralds, fair and square, plus a discount I'll almost certainly regret.\n\nAnd if Kestrel hasn't bent your ear already: my final caravan run is the only thing standing between this village and empty larders. If you're the sword walking beside it, I'll feel a great deal better about my life expectancy."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Wares for the Road§r" }] },
+            "commands": ["/scriptevent lore:quest accept wares_for_the_road"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bTurn in: Wares for the Road§r" }] },
+            "commands": ["/scriptevent lore:quest turnin wares_for_the_road"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
+            "commands": ["/scriptevent lore:quest status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator trader.root"]
+          }
+        ]
+      }
+    ]
+  }
+}

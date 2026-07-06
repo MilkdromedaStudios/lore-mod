@@ -1,0 +1,47 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "lore.raid_horn": {
+      "category": "hostile",
+      "min_distance": 0.0,
+      "max_distance": 64.0,
+      "sounds": [
+        {
+          "name": "sounds/raid/horn",
+          "volume": 1.0,
+          "pitch": 0.9
+        }
+      ]
+    },
+    "lore.quest_complete": {
+      "category": "player",
+      "sounds": [
+        {
+          "name": "sounds/random/levelup",
+          "volume": 1.0,
+          "pitch": 1.0
+        }
+      ]
+    },
+    "lore.reputation_up": {
+      "category": "player",
+      "sounds": [
+        {
+          "name": "sounds/random/orb",
+          "volume": 0.8,
+          "pitch": 1.1
+        }
+      ]
+    },
+    "lore.awoken_bell": {
+      "category": "ambient",
+      "sounds": [
+        {
+          "name": "sounds/random/levelup",
+          "volume": 1.0,
+          "pitch": 0.6
+        }
+      ]
+    }
+  }
+}

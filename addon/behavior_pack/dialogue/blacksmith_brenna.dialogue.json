@@ -1,0 +1,83 @@
+{
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "blacksmith.root",
+        "npc_name": { "rawtext": [{ "text": "§cBrenna Ironsong, Blacksmith§r" }] },
+        "on_open_commands": ["/playsound random.anvil_land @initiator ~ ~ ~ 0.3"],
+        "text": {
+          "rawtext": [
+            {
+              "text": "Mind the sparks. I'm Brenna — I keep this village in nails, hinges, and the occasional sword nobody hopes to use.\n\nYou're the one they're calling the Awoken? Hmph. Prophecies don't hold a shield wall. §oSteel§r does. But my forge is cold more days than not... unless you can feed it."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eWhy did you come to Elderfall?§r" }] },
+            "commands": ["/dialogue open @s @initiator blacksmith.lore"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eHow can I help the forge?§r" }] },
+            "commands": ["/dialogue open @s @initiator blacksmith.quests"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Stay sharp, Brenna." }] },
+            "commands": ["/dialogue close @s @initiator"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "blacksmith.lore",
+        "npc_name": { "rawtext": [{ "text": "§cBrenna Ironsong, Blacksmith§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "I was an armorer in the lowland wars. Forged blades for men who broke them on each other. When my company was routed, I walked north until the fighting was a rumor, and Elderfall took me in without asking what my hammer had made.\n\nHere's the thing no one tells you about the ruins: iron pulled from this soil §osings§r on the anvil. High and clear, like a struck bell. My grandmother would've called it blessed. I call it good ore. Either way — what I forge from it does not miss."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator blacksmith.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "blacksmith.quests",
+        "npc_name": { "rawtext": [{ "text": "§cBrenna Ironsong, Blacksmith§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Two jobs, if your spine's straight enough.\n\n§6Embers of the Forge§r — bring me §f16 iron ingots§r and I'll get this forge roaring again. The village pays in emeralds; I pay in gratitude and free repairs.\n\n§6Hold the Line§r — once the forge burns, I need proof the Corrupted can bleed. Put down §f10 Corrupted Raiders§r and the first blade off my anvil is yours: the §bElderfall Defender's Blade§r, sung from ruin-iron."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Embers of the Forge§r" }] },
+            "commands": ["/scriptevent lore:quest accept embers_of_the_forge"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bTurn in: Embers of the Forge§r" }] },
+            "commands": ["/scriptevent lore:quest turnin embers_of_the_forge"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Hold the Line§r" }] },
+            "commands": ["/scriptevent lore:quest accept hold_the_line"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
+            "commands": ["/scriptevent lore:quest status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator blacksmith.root"]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "healers_harvest",
+    "name": "The Healer's Harvest",
+    "type": "gathering",
+    "giver": "lore:healer_liora",
+    "description": "Liora Dawnpetal's infirmary shelves are bare on the eve of a siege. Gather 12 sweet berries for salves and 4 spider eyes for pain-quieting tinctures.",
+    "prerequisites": [],
+    "steps": [
+      "Speak with Liora Dawnpetal and accept the quest.",
+      "Gather 12 sweet berries from bushes in the taiga.",
+      "Collect 4 spider eyes from spiders at night.",
+      "Return to Liora and turn in the supplies through her dialogue."
+    ],
+    "objective": {
+      "kind": "gather",
+      "items": [
+        {
+          "id": "minecraft:sweet_berries",
+          "count": 12
+        },
+        {
+          "id": "minecraft:spider_eye",
+          "count": 4
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "minecraft:golden_apple",
+          "count": 2
+        },
+        {
+          "id": "minecraft:emerald",
+          "count": 6
+        }
+      ],
+      "xp_levels": 2,
+      "reputation": 5
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted healers_harvest",
+      "on_complete": "lore:quest_completed healers_harvest"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "mayor.root",
+        "npc_name": { "rawtext": [{ "text": "§6Mayor Aldric Veyne§r" }] },
+        "on_open_commands": ["/playsound random.pop2 @initiator"],
+        "text": {
+          "rawtext": [
+            {
+              "text": "So it is true. The one the old stones spoke of walks among us at last.\n\nWelcome to §6Elderfall§r, traveler. I am Aldric Veyne, mayor of this village — though some days I feel more like the keeper of a graveyard that refuses to sleep. We built our homes upon ruins older than any kingdom, and the ruins... remember."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eTell me of Elderfall's origin.§r" }] },
+            "commands": ["/dialogue open @s @initiator mayor.origin_1"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eWhat work needs doing?§r" }] },
+            "commands": ["/dialogue open @s @initiator mayor.quests"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bHow do the people see me?§r" }] },
+            "commands": ["/scriptevent lore:reputation query"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§cSound the horn. The siege begins.§r" }] },
+            "commands": ["/scriptevent lore:raid start"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Farewell, Mayor." }] },
+            "commands": ["/dialogue close @s @initiator"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "mayor.origin_1",
+        "npc_name": { "rawtext": [{ "text": "§6Mayor Aldric Veyne§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Three generations ago, our grandparents fled the burning lowlands and followed a white hart into these hills. Where it vanished, they found the ruins: arches of pale stone, a bell tower with no bell, and a shrine sunk into the earth like a closed eye.\n\nThe land was kind. The harvests were rich. So they stayed, and named the place §6Elderfall§r — for the elder trees that grow through the broken walls, and for what fell here long ago."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eWhat fell here?§r" }] },
+            "commands": ["/dialogue open @s @initiator mayor.origin_2"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator mayor.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "mayor.origin_2",
+        "npc_name": { "rawtext": [{ "text": "§6Mayor Aldric Veyne§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "The old carvings tell of the §5Hollow King§r — a warlord who bargained with something beneath the earth for a crown that would never rust. The bargain hollowed him, and his warband with him. Neither alive nor dead, they scoured these hills until the first §bAwoken§r rose to stand against them.\n\nThe carvings say the Awoken sealed the Hollow King beneath the shrine... and that when the seal thins, §banother Awoken will come, wearing a stranger's face§r."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eAnd you believe that's me?§r" }] },
+            "commands": ["/dialogue open @s @initiator mayor.origin_3"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator mayor.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "mayor.origin_3",
+        "npc_name": { "rawtext": [{ "text": "§6Mayor Aldric Veyne§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "The night before you arrived, every lantern in Elderfall burned blue for the span of a breath. The old bell tower — the one with no bell — §orang§r.\n\nAnd now the Corrupted gather in the hills, wearing the rags of the Hollow King's warband. Believe what you like, stranger. The village believes in you. I only ask that you give them a reason to keep believing.\n\n§7(Speak with Maelis the historian to learn more of the ruins.)§r"
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator mayor.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "mayor.quests",
+        "npc_name": { "rawtext": [{ "text": "§6Mayor Aldric Veyne§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Elderfall has three needs, and none of them are small.\n\n§6Bulwarks of Elderfall§r — our palisade is rotten. Bring me §f48 cobblestone§r, §f16 oak planks§r and §f8 torches§r and we will shore up the walls before the Corrupted test them.\n\n§6Whispers Below§r — find the buried shrine southwest of the village and learn what stirs beneath it.\n\n§6The Siege of Elderfall§r — when you have proven yourself and the walls are ready, we sound the horn and end this."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Bulwarks of Elderfall§r" }] },
+            "commands": ["/scriptevent lore:quest accept bulwarks_of_elderfall"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bTurn in: Bulwarks of Elderfall§r" }] },
+            "commands": ["/scriptevent lore:quest turnin bulwarks_of_elderfall"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Whispers Below§r" }] },
+            "commands": ["/scriptevent lore:quest accept whispers_below"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: The Siege of Elderfall§r" }] },
+            "commands": ["/scriptevent lore:quest accept siege_of_elderfall"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
+            "commands": ["/scriptevent lore:quest status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator mayor.root"]
+          }
+        ]
+      }
+    ]
+  }
+}

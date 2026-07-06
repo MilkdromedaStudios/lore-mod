@@ -1,0 +1,41 @@
+name: Build Elderfall Addon
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Validate and package .mcaddon
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate JSON structure and manifest UUIDs
+        run: python tools/validate_addon.py
+
+      - name: Package addon as .mcaddon
+        run: |
+          cd addon
+          zip -r ../Elderfall_Lore_Mod.zip behavior_pack resource_pack
+          cd ..
+          mv Elderfall_Lore_Mod.zip Elderfall_Lore_Mod.mcaddon
+          ls -lh Elderfall_Lore_Mod.mcaddon
+
+      - name: Verify package contents
+        run: unzip -l Elderfall_Lore_Mod.mcaddon | head -40
+
+      - name: Upload .mcaddon artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Elderfall_Lore_Mod
+          path: Elderfall_Lore_Mod.mcaddon
+          if-no-files-found: error

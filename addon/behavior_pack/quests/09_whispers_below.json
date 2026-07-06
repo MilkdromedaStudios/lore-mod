@@ -1,0 +1,42 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "whispers_below",
+    "name": "Whispers Below",
+    "type": "investigation",
+    "giver": "lore:mayor_aldric",
+    "description": "Something stirs beneath the buried shrine southwest of Elderfall \u2014 the closed eye the founders built around. Find it, stand upon it, and learn what the whispers want. The mayor keeps the Awoken Charm for whoever dares.",
+    "prerequisites": [],
+    "steps": [
+      "Accept the quest from Mayor Aldric Veyne.",
+      "Travel southwest of the village and find the Buried Shrine.",
+      "Stand within the shrine circle and listen.",
+      "The quest completes automatically at the shrine; the Awoken Charm is yours."
+    ],
+    "objective": {
+      "kind": "visit",
+      "radius": 8,
+      "sites": [
+        {
+          "label": "Buried Shrine",
+          "dx": -60,
+          "dz": -45
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:awoken_charm",
+          "count": 1
+        }
+      ],
+      "xp_levels": 4,
+      "reputation": 10
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted whispers_below",
+      "on_complete": "lore:quest_completed whispers_below"
+    }
+  }
+}

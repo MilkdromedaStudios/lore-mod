@@ -1,0 +1,63 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.lore.humanoid_walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "leftArm": {
+          "rotation": ["-math.cos(query.anim_time * 38.17) * 40.0", 0, 0]
+        },
+        "rightArm": {
+          "rotation": ["math.cos(query.anim_time * 38.17) * 40.0", 0, 0]
+        },
+        "leftLeg": {
+          "rotation": ["math.cos(query.anim_time * 38.17) * 40.0", 0, 0]
+        },
+        "rightLeg": {
+          "rotation": ["-math.cos(query.anim_time * 38.17) * 40.0", 0, 0]
+        }
+      }
+    },
+    "animation.lore.raider_arms": {
+      "loop": true,
+      "bones": {
+        "leftArm": {
+          "rotation": [-70, 0, 0]
+        },
+        "rightArm": {
+          "rotation": [-70, 0, 0]
+        }
+      }
+    },
+    "animation.lore.guardian_walk": {
+      "loop": true,
+      "anim_time_update": "query.modified_distance_moved",
+      "bones": {
+        "leftArm": {
+          "rotation": ["-math.cos(query.anim_time * 25.0) * 25.0", 0, 0]
+        },
+        "rightArm": {
+          "rotation": ["math.cos(query.anim_time * 25.0) * 25.0", 0, 0]
+        },
+        "leftLeg": {
+          "rotation": ["math.cos(query.anim_time * 25.0) * 30.0", 0, 0]
+        },
+        "rightLeg": {
+          "rotation": ["-math.cos(query.anim_time * 25.0) * 30.0", 0, 0]
+        }
+      }
+    },
+    "animation.lore.look_at_target": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "relative_to": {
+            "rotation": "entity"
+          },
+          "rotation": ["query.target_x_rotation", "query.target_y_rotation", 0]
+        }
+      }
+    }
+  }
+}

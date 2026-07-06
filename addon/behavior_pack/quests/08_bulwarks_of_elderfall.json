@@ -1,0 +1,53 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "bulwarks_of_elderfall",
+    "name": "Bulwarks of Elderfall",
+    "type": "raid_preparation",
+    "giver": "lore:mayor_aldric",
+    "description": "Elderfall's palisade is rotten and the Corrupted are mustering. Deliver 48 cobblestone, 16 oak planks, and 8 torches to Mayor Aldric so the walls stand when the horn sounds.",
+    "prerequisites": [],
+    "steps": [
+      "Speak with Mayor Aldric Veyne and accept the quest.",
+      "Gather 48 cobblestone.",
+      "Gather 16 oak planks.",
+      "Craft or gather 8 torches.",
+      "Return to Aldric and turn in the materials through his dialogue."
+    ],
+    "objective": {
+      "kind": "gather",
+      "items": [
+        {
+          "id": "minecraft:cobblestone",
+          "count": 48
+        },
+        {
+          "id": "minecraft:oak_planks",
+          "count": 16
+        },
+        {
+          "id": "minecraft:torch",
+          "count": 8
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "minecraft:emerald",
+          "count": 16
+        },
+        {
+          "id": "minecraft:iron_chestplate",
+          "count": 1
+        }
+      ],
+      "xp_levels": 3,
+      "reputation": 8
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted bulwarks_of_elderfall",
+      "on_complete": "lore:quest_completed bulwarks_of_elderfall"
+    }
+  }
+}

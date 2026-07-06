@@ -1,0 +1,59 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "perimeter_patrol",
+    "name": "Perimeter Patrol",
+    "type": "investigation",
+    "giver": "lore:scout_kestrel",
+    "description": "Kestrel Thorn's watch markers ring the village at the four compass points. Walk the full circuit and confirm each post still stands before the Corrupted muster breaks.",
+    "prerequisites": [],
+    "steps": [
+      "Accept the quest from Kestrel Thorn.",
+      "Visit the North Watch Post.",
+      "Visit the East Watch Post.",
+      "Visit the South Watch Post.",
+      "Visit the West Watch Post.",
+      "The quest completes automatically when the circuit is done."
+    ],
+    "objective": {
+      "kind": "visit",
+      "radius": 6,
+      "sites": [
+        {
+          "label": "North Watch Post",
+          "dx": 0,
+          "dz": -24
+        },
+        {
+          "label": "East Watch Post",
+          "dx": 24,
+          "dz": 0
+        },
+        {
+          "label": "South Watch Post",
+          "dx": 0,
+          "dz": 24
+        },
+        {
+          "label": "West Watch Post",
+          "dx": -24,
+          "dz": 0
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:scouts_beacon",
+          "count": 1
+        }
+      ],
+      "xp_levels": 2,
+      "reputation": 5
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted perimeter_patrol",
+      "on_complete": "lore:quest_completed perimeter_patrol"
+    }
+  }
+}

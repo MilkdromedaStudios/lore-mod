@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "lore:raider_captain",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/raider_captain"
+      },
+      "geometry": {
+        "default": "geometry.lore_humanoid"
+      },
+      "animations": {
+        "walk": "animation.lore.humanoid_walk",
+        "look_at_target": "animation.lore.look_at_target",
+        "raider_arms": "animation.lore.raider_arms"
+      },
+      "scripts": {
+        "animate": [
+          "walk",
+          "look_at_target",
+          "raider_arms"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.lore_default"
+      ],
+      "spawn_egg": {
+        "base_color": "#2a2331",
+        "overlay_color": "#c9a227"
+      }
+    }
+  }
+}

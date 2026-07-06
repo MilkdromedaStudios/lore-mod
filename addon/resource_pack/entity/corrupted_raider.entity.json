@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "lore:corrupted_raider",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/corrupted_raider",
+        "vanguard": "textures/entity/corrupted_raider_vanguard"
+      },
+      "geometry": {
+        "default": "geometry.lore_humanoid"
+      },
+      "animations": {
+        "walk": "animation.lore.humanoid_walk",
+        "look_at_target": "animation.lore.look_at_target",
+        "raider_arms": "animation.lore.raider_arms"
+      },
+      "scripts": {
+        "animate": [
+          "walk",
+          "look_at_target",
+          "raider_arms"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.lore_variant"
+      ],
+      "spawn_egg": {
+        "base_color": "#3b4a3a",
+        "overlay_color": "#7b2fbe"
+      }
+    }
+  }
+}

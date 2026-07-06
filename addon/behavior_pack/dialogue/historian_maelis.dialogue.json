@@ -1,0 +1,96 @@
+{
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "historian.root",
+        "npc_name": { "rawtext": [{ "text": "§3Maelis Vane, Historian§r" }] },
+        "on_open_commands": ["/playsound item.book.page_turn @initiator"],
+        "text": {
+          "rawtext": [
+            {
+              "text": "Shh — no, come in, come in. Mind the rubbings; the charcoal smears.\n\nI am Maelis Vane, keeper of what little Elderfall remembers. Forty years I have copied the carvings on these ruins, and in forty years they have never once changed. Until the night before you arrived. §oThree glyphs rewrote themselves.§r I watched it happen. Do you understand what that means? The stones are §oawake§r, and they are writing about §byou§r."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eWhat do the carvings say?§r" }] },
+            "commands": ["/dialogue open @s @initiator historian.lore_1"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eHow can I help your research?§r" }] },
+            "commands": ["/dialogue open @s @initiator historian.quests"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Guard the pages well, Maelis." }] },
+            "commands": ["/dialogue close @s @initiator"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "historian.lore_1",
+        "npc_name": { "rawtext": [{ "text": "§3Maelis Vane, Historian§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "The oldest glyphs tell of the §5Hollow King§r and his bargain — you have heard that tale from Aldric, no doubt, and he tells it well enough for a man who cannot read a single rune.\n\nBut the newer carvings, the ones that changed... they read: §o\"The seal is a candle. The candle gutters. The Awoken is the hand that shields the flame — or the wind that kills it.\"§r\n\nA warning, or a threat. The grammar of dead languages is regrettably ambiguous."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eWhat happened to the first Awoken?§r" }] },
+            "commands": ["/dialogue open @s @initiator historian.lore_2"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator historian.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "historian.lore_2",
+        "npc_name": { "rawtext": [{ "text": "§3Maelis Vane, Historian§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "The first Awoken has no name in the record — deliberately, I think. Names are doors, and the carvers were closing doors.\n\nWhat the stones do say: the Awoken did not defeat the Hollow King with strength. They §oout-remembered§r him. They carried the memory of every villager, every field, every small kindness into the shrine, and the Hollow King — who had traded all his memories for that rusting crown — could not stand against it.\n\nSo when the villagers here treat you kindly, accept it. Their regard is not sentiment. §bIt is armament.§r"
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator historian.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "historian.quests",
+        "npc_name": { "rawtext": [{ "text": "§3Maelis Vane, Historian§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "My knees are older than my curiosity is patient. There are three ruin fragments I can no longer walk to:\n\n§6Echoes Beneath§r — visit the §fSunken Archway§r, the §fShattered Bell Tower§r, and the §fMoss-bound Obelisk§r around the village. Stand before each and simply §olisten§r. Whatever you feel there, I want it in your own words. The stones speak louder to you than they ever have to me."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Echoes Beneath§r" }] },
+            "commands": ["/scriptevent lore:quest accept echoes_beneath"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
+            "commands": ["/scriptevent lore:quest status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator historian.root"]
+          }
+        ]
+      }
+    ]
+  }
+}

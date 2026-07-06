@@ -1,0 +1,45 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "the_last_caravan",
+    "name": "The Last Caravan",
+    "type": "escort",
+    "giver": "lore:scout_kestrel",
+    "description": "Orin Fairwind's final supply run is the only thing between Elderfall and empty larders. Escort the caravan through two and a half minutes of Corrupted ambushes and keep Orin alive.",
+    "prerequisites": [],
+    "steps": [
+      "Accept the quest from Kestrel Thorn.",
+      "Return to Kestrel and choose 'Signal the caravan' when ready to fight.",
+      "Defend Orin's caravan for 150 seconds against three ambush waves.",
+      "The quest completes automatically if the caravan survives; if Orin falls, signal Kestrel to try again."
+    ],
+    "objective": {
+      "kind": "escort",
+      "duration_seconds": 150,
+      "ambushes": 3,
+      "escort_entity": "lore:trader_orin"
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "minecraft:emerald",
+          "count": 12
+        },
+        {
+          "id": "minecraft:arrow",
+          "count": 32
+        },
+        {
+          "id": "minecraft:bow",
+          "count": 1
+        }
+      ],
+      "xp_levels": 4,
+      "reputation": 10
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted the_last_caravan",
+      "on_complete": "lore:quest_completed the_last_caravan"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+## Elderfall Lore Mod — resource pack strings
+
+pack.name=Elderfall Lore Mod - Resource Pack
+pack.description=Textures, models, sounds and text for the Chronicle of Elderfall.
+
+## Entities
+entity.lore:corrupted_raider.name=Corrupted Raider
+entity.lore:raider_captain.name=Raider Captain
+entity.lore:elderfall_guardian.name=Elderfall Guardian
+entity.lore:mayor_aldric.name=Mayor Aldric Veyne
+entity.lore:blacksmith_brenna.name=Brenna Ironsong
+entity.lore:historian_maelis.name=Maelis Vane
+entity.lore:scout_kestrel.name=Kestrel Thorn
+entity.lore:healer_liora.name=Liora Dawnpetal
+entity.lore:trader_orin.name=Orin Fairwind
+
+## Spawn eggs
+item.spawn_egg.entity.lore:corrupted_raider.name=Spawn Corrupted Raider
+item.spawn_egg.entity.lore:raider_captain.name=Spawn Raider Captain
+item.spawn_egg.entity.lore:elderfall_guardian.name=Spawn Elderfall Guardian
+item.spawn_egg.entity.lore:mayor_aldric.name=Spawn Mayor Aldric Veyne
+item.spawn_egg.entity.lore:blacksmith_brenna.name=Spawn Brenna Ironsong
+item.spawn_egg.entity.lore:historian_maelis.name=Spawn Maelis Vane
+item.spawn_egg.entity.lore:scout_kestrel.name=Spawn Kestrel Thorn
+item.spawn_egg.entity.lore:healer_liora.name=Spawn Liora Dawnpetal
+item.spawn_egg.entity.lore:trader_orin.name=Spawn Orin Fairwind
+
+## Items (display_name components carry the styled names in-game)
+item.lore:elderfall_defenders_blade=Elderfall Defender's Blade
+item.lore:awoken_charm=Awoken Charm
+item.lore:scouts_beacon=Scout's Beacon
