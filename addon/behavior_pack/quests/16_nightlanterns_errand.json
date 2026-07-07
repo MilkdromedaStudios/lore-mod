@@ -1,0 +1,44 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "nightlanterns_errand",
+    "name": "Nightlantern's Errand",
+    "type": "gathering",
+    "giver": "lore:wanderer_sella",
+    "description": "Sella Nightlantern's lantern burns memory, and it is running low. Bring her 6 glass bottles and 4 glowstone dust to decant fresh light \u2014 and she will part with a relic she won regrettably.",
+    "prerequisites": [],
+    "steps": [
+      "Accept the quest from Sella Nightlantern when her lantern visits Elderfall.",
+      "Gather 6 glass bottles.",
+      "Gather 4 glowstone dust.",
+      "Return to Sella and turn them in through her dialogue."
+    ],
+    "objective": {
+      "kind": "gather",
+      "items": [
+        {
+          "id": "minecraft:glass_bottle",
+          "count": 6
+        },
+        {
+          "id": "minecraft:glowstone_dust",
+          "count": 4
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:blade_soulleech",
+          "count": 1
+        }
+      ],
+      "xp_levels": 3,
+      "reputation": 6
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted nightlanterns_errand",
+      "on_complete": "lore:quest_completed nightlanterns_errand"
+    }
+  }
+}

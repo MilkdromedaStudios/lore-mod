@@ -175,6 +175,11 @@ export function checkVisitQuests() {
           );
           playSound(player, "random.orb");
           runQuiet(player, "particle minecraft:endrod ~ ~1 ~");
+          if (site.ambush) {
+            spawnRaiders(player.location, site.ambush);
+            player.sendMessage("§c[Elderfall] The humming rises around you — an ambush!");
+            playSound(player, "mob.evocation_illager.prepare_attack");
+          }
         }
       });
       if (changed) {
@@ -298,8 +303,13 @@ export function tickEscort() {
 }
 
 function spawnAmbush(location) {
+  spawnRaiders(location, 2);
+}
+
+/** Spawn `count` Corrupted Raiders in a loose ring around a location. */
+function spawnRaiders(location, count) {
   const dimension = overworld();
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < count; i++) {
     const angle = Math.random() * Math.PI * 2;
     const radius = 9 + Math.random() * 5;
     try {
@@ -310,7 +320,7 @@ function spawnAmbush(location) {
       });
       raider.addTag("lore_ambush_mob");
     } catch {
-      // Unloaded or blocked spawn point; the caravan gets a lucky mile.
+      // Unloaded or blocked spawn point; the target gets a lucky mile.
     }
   }
 }
@@ -354,6 +364,9 @@ function progressLine(player, quest) {
   }
   if (objective.kind === "raid") {
     return "sound the horn at Aldric's hall";
+  }
+  if (objective.kind === "outbreak") {
+    return "survive the next outbreak (every 20th day)";
   }
   return "in progress";
 }

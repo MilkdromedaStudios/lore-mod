@@ -18,6 +18,8 @@ import { overworld, notify, runQuiet, title, getVillageCenter, setVillageCenter 
 
 const RAID_ACTIVE = "lore:raid_active";
 const RAID_WAVE = "lore:raid_wave"; // -1 = warning phase, 0+ = wave index spawned
+const RAID_SOURCE = "lore:raid_source"; // "horn" (mayor/manual) or "outbreak" (20-day cycle)
+const RAID_LEVEL = "lore:raid_level"; // outbreak strength: extra raiders per wave
 const RAID_TAG = "lore_raid_mob";
 const WARNING_TICKS = 300; // 15s from horn to first wave
 const BETWEEN_WAVE_TICKS = 200; // 10s breather between waves
@@ -57,7 +59,7 @@ export function isRaidActive() {
   return world.getDynamicProperty(RAID_ACTIVE) === true;
 }
 
-export function startRaid(initiator, npcEntity) {
+export function startRaid(initiator, npcEntity, opts = {}) {
   if (isRaidActive()) {
     if (initiator) initiator.sendMessage("§e[Elderfall] The siege is already upon us — to the walls!");
     return;
@@ -74,6 +76,8 @@ export function startRaid(initiator, npcEntity) {
 
   world.setDynamicProperty(RAID_ACTIVE, true);
   world.setDynamicProperty(RAID_WAVE, -1);
+  world.setDynamicProperty(RAID_SOURCE, opts.source ?? "horn");
+  world.setDynamicProperty(RAID_LEVEL, opts.level ?? 1);
   sweeping = false;
 
   world.sendMessage("§4§l[Elderfall] The horn of Elderfall sounds across the hills!");
@@ -125,7 +129,14 @@ function spawnWave(index) {
   }
   notify("lore:raid_wave", `${index + 1}`);
 
-  for (const entry of wave.entries) {
+  // Outbreaks grow one raider stronger per wave for every outbreak survived.
+  const level = world.getDynamicProperty(RAID_LEVEL) ?? 1;
+  const bonus = Math.min(6, Math.max(0, level - 1));
+  const entries = bonus > 0
+    ? [...wave.entries, { type: "lore:corrupted_raider", count: bonus }]
+    : wave.entries;
+
+  for (const entry of entries) {
     for (let i = 0; i < entry.count; i++) {
       const angle = Math.random() * Math.PI * 2;
       const radius = 18 + Math.random() * 8;
@@ -166,17 +177,18 @@ export function tickRaid() {
 }
 
 function endRaidVictory() {
+  const source = world.getDynamicProperty(RAID_SOURCE) ?? "horn";
   world.setDynamicProperty(RAID_ACTIVE, false);
   world.setDynamicProperty(RAID_WAVE, 0);
   world.sendMessage("§6§l[Elderfall] VICTORY! §r§6The Captain's banner burns and the humming falls silent.");
   world.sendMessage("§e[Elderfall] The village pours into the square. Tonight, Elderfall celebrates its Awoken.");
   for (const player of world.getPlayers()) {
-    title(player, "§6ELDERFALL STANDS", "§eThe siege is broken");
+    title(player, "§6ELDERFALL STANDS", source === "outbreak" ? "§eThe outbreak is broken" : "§eThe siege is broken");
     runQuiet(player, "playsound lore.quest_complete @s");
   }
   runQuiet(overworld(), "function elderfall/raid_victory");
-  addReputation(15, "the siege of Elderfall was broken");
-  notify("lore:raid_victory", "elderfall");
+  addReputation(15, source === "outbreak" ? "the outbreak was driven back" : "the siege of Elderfall was broken");
+  notify("lore:raid_victory", source);
 }
 
 /** Admin stop: clears raid state and removes remaining raid mobs. */

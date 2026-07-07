@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "lore:tome_windstep",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "lore_tome_windstep"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "\u00a7fTome: Windstep"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:rarity": "epic",
+      "minecraft:cooldown": {
+        "category": "lore_tome_windstep",
+        "duration": 5.0
+      }
+    }
+  }
+}

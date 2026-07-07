@@ -153,6 +153,104 @@ BEACON_PALETTE = {
 }
 
 
+def recolor_blade(steel, glow):
+    """Palette-swap the sword sprite for the ten legendary blades."""
+    palette = dict(BLADE_PALETTE)
+    palette["S"] = steel
+    palette["b"] = glow
+    palette["G"] = tuple(min(255, int(c * 1.25)) for c in steel[:3]) + (255,)
+    return paint_grid(BLADE, palette)
+
+
+CHEST = [
+    "................",
+    ".ss..........ss.",
+    ".sBs........sBs.",
+    ".sBBssssssssBBs.",
+    ".sBBBBBBBBBBBBs.",
+    ".sBBBBBBBBBBBBs.",
+    "..sBBBBBBBBBBs..",
+    "..sBBBBTTBBBBs..",
+    "..sBBBBTTBBBBs..",
+    "..sBBBBBBBBBBs..",
+    "..sBBBBBBBBBBs..",
+    "..sBBBBBBBBBBs..",
+    "..ssssssssssss..",
+    "................",
+    "................",
+    "................",
+]
+
+TOME = [
+    "................",
+    "...ccccccccc....",
+    "..cPPPPPPPPPc...",
+    "..cPPPPPPPPPc...",
+    "..cPPrrrrPPPc...",
+    "..cPPrGGrPPPc...",
+    "..cPPrGGrPPPc...",
+    "..cPPrrrrPPPc...",
+    "..cPPPPPPPPPc...",
+    "..cPPPPPPPPPc...",
+    "..cPPPPPPPPPc...",
+    "..cPPPPPPPPPc...",
+    "...ccccccccc....",
+    "................",
+    "................",
+    "................",
+]
+
+
+def chest_icon(base, trim):
+    shadow = shade(base, 0.6)
+    return paint_grid(CHEST, {"B": base, "T": trim, "s": shadow})
+
+
+def tome_icon(cover, rune):
+    edge = shade(cover, 0.5)
+    gem = tuple(min(255, int(c * 1.5)) for c in rune[:3]) + (255,)
+    return paint_grid(TOME, {"c": edge, "P": cover, "r": rune, "G": gem})
+
+
+# Ten legendary blades: (name, steel color, edge-glow color).
+BLADES = [
+    ("blade_emberfang", (232, 150, 60, 255), (255, 90, 20, 255)),
+    ("blade_frostbite", (200, 230, 245, 255), (120, 210, 255, 255)),
+    ("blade_venomkiss", (150, 200, 90, 255), (60, 160, 40, 255)),
+    ("blade_soulleech", (170, 130, 200, 255), (120, 60, 180, 255)),
+    ("blade_stormcall", (150, 170, 230, 255), (90, 120, 255, 255)),
+    ("blade_galeforce", (235, 240, 245, 255), (190, 220, 235, 255)),
+    ("blade_wardenspike", (120, 170, 170, 255), (60, 130, 130, 255)),
+    ("blade_executioner", (150, 60, 60, 255), (220, 40, 40, 255)),
+    ("blade_dawnbreaker", (250, 220, 130, 255), (255, 200, 60, 255)),
+    ("blade_voidrend", (80, 70, 95, 255), (40, 20, 60, 255)),
+]
+
+# Ten armor suits: (name, base color, trim color).
+SUITS = [
+    ("armor_watchmans_mail", (140, 145, 155, 255), (140, 40, 45, 255)),
+    ("armor_emberplate", (185, 95, 40, 255), (255, 180, 60, 255)),
+    ("armor_frostguard", (150, 200, 230, 255), (240, 250, 255, 255)),
+    ("armor_galecloak", (225, 230, 235, 255), (170, 200, 215, 255)),
+    ("armor_mosshide", (95, 125, 60, 255), (60, 85, 40, 255)),
+    ("armor_duskweave", (60, 55, 80, 255), (110, 100, 150, 255)),
+    ("armor_tidebinder", (55, 110, 130, 255), (110, 200, 210, 255)),
+    ("armor_stoneheart", (120, 120, 115, 255), (80, 80, 75, 255)),
+    ("armor_skydancer", (200, 160, 220, 255), (245, 220, 255, 255)),
+    ("armor_runeplate", (110, 70, 160, 255), (87, 216, 196, 255)),
+]
+
+# Six spell tomes: (name, cover color, rune color).
+TOME_COLORS = [
+    ("tome_emberlash", (150, 60, 30, 255), (255, 150, 50, 255)),
+    ("tome_frostbind", (50, 90, 140, 255), (150, 220, 255, 255)),
+    ("tome_skystrike", (60, 70, 130, 255), (150, 170, 255, 255)),
+    ("tome_mending_light", (190, 160, 180, 255), (255, 220, 240, 255)),
+    ("tome_stoneskin", (105, 105, 100, 255), (200, 200, 190, 255)),
+    ("tome_windstep", (170, 190, 190, 255), (230, 250, 250, 255)),
+]
+
+
 # ------------------------------------------------- humanoid skin painter ---
 
 # Standard 64x64 humanoid UV regions (matches geometry.lore_humanoid):
@@ -294,6 +392,14 @@ def main():
     write_png(os.path.join(ITEMS, "scouts_beacon.png"), 16, 16,
               paint_grid(BEACON, BEACON_PALETTE))
 
+    # Legendary equipment and spell tomes (16x16 each).
+    for name, steel, glow in BLADES:
+        write_png(os.path.join(ITEMS, f"{name}.png"), 16, 16, recolor_blade(steel, glow))
+    for name, base, trim in SUITS:
+        write_png(os.path.join(ITEMS, f"{name}.png"), 16, 16, chest_icon(base, trim))
+    for name, cover, rune in TOME_COLORS:
+        write_png(os.path.join(ITEMS, f"{name}.png"), 16, 16, tome_icon(cover, rune))
+
     # Hostiles (64x64 humanoid layout).
     write_png(os.path.join(ENTITY, "corrupted_raider.png"), 64, 64,
               corrupted_skin(11, base=(122, 134, 116, 255), cloth=(59, 74, 58, 255), glow=(123, 47, 190, 255)))
@@ -327,6 +433,19 @@ def main():
         26, skin=(205, 158, 122, 255), hair=(90, 65, 40, 255),
         torso=(122, 92, 48, 255), sleeves=(63, 127, 191, 255),
         legs=(85, 70, 50, 255), boots=(55, 45, 35, 255), trim=(63, 127, 191, 255)))
+
+    write_png(os.path.join(ENTITY, "villager_captain.png"), 64, 64, humanoid_skin(
+        27, skin=(200, 155, 120, 255), hair=(140, 140, 145, 255),
+        torso=(90, 95, 102, 255), sleeves=(70, 75, 82, 255),
+        legs=(55, 58, 64, 255), boots=(30, 30, 32, 255), trim=(140, 31, 40, 255)))
+    write_png(os.path.join(ENTITY, "villager_fen.png"), 64, 64, humanoid_skin(
+        28, skin=(210, 160, 125, 255), hair=(200, 170, 90, 255),
+        torso=(79, 122, 58, 255), sleeves=(120, 95, 60, 255),
+        legs=(90, 80, 55, 255), boots=(60, 48, 35, 255), trim=(201, 162, 39, 255)))
+    write_png(os.path.join(ENTITY, "villager_sella.png"), 64, 64, humanoid_skin(
+        29, skin=(228, 210, 195, 255), hair=(35, 35, 60, 255),
+        torso=(40, 48, 78, 255), sleeves=(32, 38, 62, 255),
+        legs=(28, 32, 50, 255), boots=(20, 22, 34, 255), trim=(87, 216, 196, 255)))
 
     # Guardian (128x128 custom layout).
     write_png(os.path.join(ENTITY, "elderfall_guardian.png"), 128, 128, guardian_skin())

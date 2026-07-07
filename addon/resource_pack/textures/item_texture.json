@@ -10,6 +10,84 @@
     },
     "lore_scouts_beacon": {
       "textures": "textures/items/scouts_beacon"
+    },
+    "lore_blade_emberfang": {
+      "textures": "textures/items/blade_emberfang"
+    },
+    "lore_blade_frostbite": {
+      "textures": "textures/items/blade_frostbite"
+    },
+    "lore_blade_venomkiss": {
+      "textures": "textures/items/blade_venomkiss"
+    },
+    "lore_blade_soulleech": {
+      "textures": "textures/items/blade_soulleech"
+    },
+    "lore_blade_stormcall": {
+      "textures": "textures/items/blade_stormcall"
+    },
+    "lore_blade_galeforce": {
+      "textures": "textures/items/blade_galeforce"
+    },
+    "lore_blade_wardenspike": {
+      "textures": "textures/items/blade_wardenspike"
+    },
+    "lore_blade_executioner": {
+      "textures": "textures/items/blade_executioner"
+    },
+    "lore_blade_dawnbreaker": {
+      "textures": "textures/items/blade_dawnbreaker"
+    },
+    "lore_blade_voidrend": {
+      "textures": "textures/items/blade_voidrend"
+    },
+    "lore_armor_watchmans_mail": {
+      "textures": "textures/items/armor_watchmans_mail"
+    },
+    "lore_armor_emberplate": {
+      "textures": "textures/items/armor_emberplate"
+    },
+    "lore_armor_frostguard": {
+      "textures": "textures/items/armor_frostguard"
+    },
+    "lore_armor_galecloak": {
+      "textures": "textures/items/armor_galecloak"
+    },
+    "lore_armor_mosshide": {
+      "textures": "textures/items/armor_mosshide"
+    },
+    "lore_armor_duskweave": {
+      "textures": "textures/items/armor_duskweave"
+    },
+    "lore_armor_tidebinder": {
+      "textures": "textures/items/armor_tidebinder"
+    },
+    "lore_armor_stoneheart": {
+      "textures": "textures/items/armor_stoneheart"
+    },
+    "lore_armor_skydancer": {
+      "textures": "textures/items/armor_skydancer"
+    },
+    "lore_armor_runeplate": {
+      "textures": "textures/items/armor_runeplate"
+    },
+    "lore_tome_emberlash": {
+      "textures": "textures/items/tome_emberlash"
+    },
+    "lore_tome_frostbind": {
+      "textures": "textures/items/tome_frostbind"
+    },
+    "lore_tome_skystrike": {
+      "textures": "textures/items/tome_skystrike"
+    },
+    "lore_tome_mending_light": {
+      "textures": "textures/items/tome_mending_light"
+    },
+    "lore_tome_stoneskin": {
+      "textures": "textures/items/tome_stoneskin"
+    },
+    "lore_tome_windstep": {
+      "textures": "textures/items/tome_windstep"
     }
   }
 }

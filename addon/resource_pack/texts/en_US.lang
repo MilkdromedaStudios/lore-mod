@@ -13,6 +13,9 @@ entity.lore:historian_maelis.name=Maelis Vane
 entity.lore:scout_kestrel.name=Kestrel Thorn
 entity.lore:healer_liora.name=Liora Dawnpetal
 entity.lore:trader_orin.name=Orin Fairwind
+entity.lore:captain_roderic.name=Captain Roderic Hale
+entity.lore:wanderer_fen.name=Fen Greenhollow
+entity.lore:wanderer_sella.name=Sella Nightlantern
 
 ## Spawn eggs
 item.spawn_egg.entity.lore:corrupted_raider.name=Spawn Corrupted Raider
@@ -24,8 +27,37 @@ item.spawn_egg.entity.lore:historian_maelis.name=Spawn Maelis Vane
 item.spawn_egg.entity.lore:scout_kestrel.name=Spawn Kestrel Thorn
 item.spawn_egg.entity.lore:healer_liora.name=Spawn Liora Dawnpetal
 item.spawn_egg.entity.lore:trader_orin.name=Spawn Orin Fairwind
+item.spawn_egg.entity.lore:captain_roderic.name=Spawn Captain Roderic Hale
+item.spawn_egg.entity.lore:wanderer_fen.name=Spawn Fen Greenhollow
+item.spawn_egg.entity.lore:wanderer_sella.name=Spawn Sella Nightlantern
 
 ## Items (display_name components carry the styled names in-game)
 item.lore:elderfall_defenders_blade=Elderfall Defender's Blade
 item.lore:awoken_charm=Awoken Charm
 item.lore:scouts_beacon=Scout's Beacon
+item.lore:blade_emberfang=Emberfang
+item.lore:blade_frostbite=Frostbite
+item.lore:blade_venomkiss=Venomkiss
+item.lore:blade_soulleech=Soulleech
+item.lore:blade_stormcall=Stormcall
+item.lore:blade_galeforce=Galeforce
+item.lore:blade_wardenspike=Wardenspike
+item.lore:blade_executioner=The Executioner
+item.lore:blade_dawnbreaker=Dawnbreaker
+item.lore:blade_voidrend=Voidrend
+item.lore:armor_watchmans_mail=Watchman's Mail
+item.lore:armor_emberplate=Emberplate
+item.lore:armor_frostguard=Frostguard Carapace
+item.lore:armor_galecloak=Galecloak
+item.lore:armor_mosshide=Mosshide Jerkin
+item.lore:armor_duskweave=Duskweave Shroud
+item.lore:armor_tidebinder=Tidebinder Scale
+item.lore:armor_stoneheart=Stoneheart Plate
+item.lore:armor_skydancer=Skydancer Harness
+item.lore:armor_runeplate=Runeplate of the Awoken
+item.lore:tome_emberlash=Tome: Emberlash
+item.lore:tome_frostbind=Tome: Frostbind
+item.lore:tome_skystrike=Tome: Skystrike
+item.lore:tome_mending_light=Tome: Mending Light
+item.lore:tome_stoneskin=Tome: Stoneskin
+item.lore:tome_windstep=Tome: Windstep

@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "embermarch",
+    "name": "Embermarch",
+    "type": "raid_defense",
+    "giver": "lore:captain_roderic",
+    "description": "Every twentieth day the seal exhales and the Corrupted march on Elderfall. Roderic asks one thing: be standing in the square when the next outbreak breaks \u2014 and still standing when it is done. Dawnbreaker waits for whoever manages it.",
+    "prerequisites": [
+      "the_captains_gambit"
+    ],
+    "steps": [
+      "Complete 'The Captain's Gambit' first.",
+      "Accept the quest from Captain Roderic Hale.",
+      "Wait for the next outbreak (every 20th day \u2014 ask Roderic how long).",
+      "Defend the village until every outbreak wave is broken.",
+      "The quest completes automatically at the outbreak victory."
+    ],
+    "objective": {
+      "kind": "outbreak"
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:blade_dawnbreaker",
+          "count": 1
+        },
+        {
+          "id": "minecraft:emerald",
+          "count": 20
+        }
+      ],
+      "xp_levels": 8,
+      "reputation": 20
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted embermarch",
+      "on_complete": "lore:quest_completed embermarch"
+    }
+  }
+}
