@@ -1,0 +1,120 @@
+{
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "sella.root",
+        "npc_name": { "rawtext": [{ "text": "§5Sella Nightlantern, Relic Dealer§r" }] },
+        "on_open_commands": ["/playsound random.orb @initiator ~ ~ ~ 0.4"],
+        "text": {
+          "rawtext": [
+            {
+              "text": "Lower your voice. Some of my stock is sleeping.\n\nSella Nightlantern. I deal in relics: things dug out of barrows, fished from drowned churches, or won at card tables from people who should never have been holding them. I walk the long circuit — six days, six villages — and I only sell what I'd trust at my own back.\n\nYou're the Awoken. Yes, obviously. My lantern has been leaning toward you since the gate."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eWhat does your lantern burn?§r" }] },
+            "commands": ["/dialogue open @s @initiator sella.lore"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eShow me the relics.§r" }] },
+            "commands": ["/dialogue open @s @initiator sella.shop"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eNeed something found, Sella?§r" }] },
+            "commands": ["/dialogue open @s @initiator sella.quests"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Walk safe, Sella." }] },
+            "commands": ["/dialogue close @s @initiator"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sella.lore",
+        "npc_name": { "rawtext": [{ "text": "§5Sella Nightlantern, Relic Dealer§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Memory. It burns memory — mine, donated a candle-hour at a time. Blue light shows me what things §oare§r, not what they claim to be. A crown that swears it cannot rust. A blade that says it's only ever been decorative. The lantern coughs at liars.\n\nI bought the trick from a man at the Cinderford crossroads, years ago, for one summer afternoon I honestly don't miss. Only later did I learn what else that man was buying, and from whom, and I have been walking the circuit ahead of him ever since.\n\nHe is buying up the hills' memories, Awoken. When a village forgets why it fears the dark, it stops barring the door. §dSpend your regard here carefully — in Elderfall, being remembered fondly is armor.§r"
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator sella.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sella.quests",
+        "npc_name": { "rawtext": [{ "text": "§5Sella Nightlantern, Relic Dealer§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "§6Nightlantern's Errand§r — the lantern runs low, and I decant its light into glass. Bring me §f6 glass bottles§r and §f4 glowstone dust§r.\n\nIn exchange: Soulleech. A blade with a thirst, won regrettably. Better it drinks for Elderfall than against it."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Nightlantern's Errand§r" }] },
+            "commands": ["/scriptevent lore:quest accept nightlanterns_errand"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bTurn in: Nightlantern's Errand§r" }] },
+            "commands": ["/scriptevent lore:quest turnin nightlanterns_errand"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
+            "commands": ["/scriptevent lore:quest status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator sella.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sella.shop",
+        "npc_name": { "rawtext": [{ "text": "§5Sella Nightlantern, Relic Dealer§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Touch nothing that hisses. Prices in emeralds:\n\n§bTome: Frostbind§r — freeze your enemies where they stand — §a30§r\n§7Tome: Stoneskin§r — skin like the old ruins — §a35§r\n§9Tome: Skystrike§r — lightning where you look — §a45§r\n§8Voidrend§r — a blade that withers what it cuts — §a48§r\n§5Runeplate of the Awoken§r — deepens and quickens your mana — §a60§r"
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Tome of Frostbind (30)§r" }] },
+            "commands": ["/scriptevent lore:shop buy tome_frostbind"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Tome of Stoneskin (35)§r" }] },
+            "commands": ["/scriptevent lore:shop buy tome_stoneskin"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Tome of Skystrike (45)§r" }] },
+            "commands": ["/scriptevent lore:shop buy tome_skystrike"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Voidrend (48)§r" }] },
+            "commands": ["/scriptevent lore:shop buy blade_voidrend"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Runeplate of the Awoken (60)§r" }] },
+            "commands": ["/scriptevent lore:shop buy armor_runeplate"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator sella.root"]
+          }
+        ]
+      }
+    ]
+  }
+}

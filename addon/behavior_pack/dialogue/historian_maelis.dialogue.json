@@ -72,7 +72,7 @@
         "text": {
           "rawtext": [
             {
-              "text": "My knees are older than my curiosity is patient. There are three ruin fragments I can no longer walk to:\n\n§6Echoes Beneath§r — visit the §fSunken Archway§r, the §fShattered Bell Tower§r, and the §fMoss-bound Obelisk§r around the village. Stand before each and simply §olisten§r. Whatever you feel there, I want it in your own words. The stones speak louder to you than they ever have to me."
+              "text": "My knees are older than my curiosity is patient. Work, in the order the stones suggested it:\n\n§6Echoes Beneath§r — visit the §fSunken Archway§r, the §fShattered Bell Tower§r, and the §fMoss-bound Obelisk§r. Stand before each and §olisten§r.\n\n§6The First Word§r — once the stones have spoken to you, bring me §f5 lapis§r and §f3 paper§r and I will bind what you heard into your first spell tome.\n\n§6The Hollow Crown§r — the rewritten glyphs name three far places where the King's broken crown was buried. Someone should look. Someone armed."
             }
           ]
         },
@@ -82,12 +82,53 @@
             "commands": ["/scriptevent lore:quest accept echoes_beneath"]
           },
           {
+            "name": { "rawtext": [{ "text": "§aAccept: The First Word§r" }] },
+            "commands": ["/scriptevent lore:quest accept the_first_word"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bTurn in: The First Word§r" }] },
+            "commands": ["/scriptevent lore:quest turnin the_first_word"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: The Hollow Crown§r" }] },
+            "commands": ["/scriptevent lore:quest accept the_hollow_crown"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eBrowse the archive's tomes.§r" }] },
+            "commands": ["/dialogue open @s @initiator historian.shop"]
+          },
+          {
             "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
             "commands": ["/scriptevent lore:quest status"]
           },
           {
             "name": { "rawtext": [{ "text": "Back." }] },
             "commands": ["/dialogue open @s @initiator historian.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "historian.shop",
+        "npc_name": { "rawtext": [{ "text": "§3Maelis Vane, Historian§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Copies, mind you — the originals stay chained to the desk. Each tome teaches one word of the old tongue; your mana does the rest. Prices in emeralds, which I spend entirely on ink:\n\n§dTome: Mending Light§r — heal yourself and the villagers around you — §a30§r\n§fTome: Windstep§r — blink forward through the air — §a25§r"
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Tome of Mending Light (30)§r" }] },
+            "commands": ["/scriptevent lore:shop buy tome_mending_light"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Tome of Windstep (25)§r" }] },
+            "commands": ["/scriptevent lore:shop buy tome_windstep"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator historian.quests"]
           }
         ]
       }

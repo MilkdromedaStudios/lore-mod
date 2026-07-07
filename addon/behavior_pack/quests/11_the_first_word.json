@@ -1,0 +1,46 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "the_first_word",
+    "name": "The First Word",
+    "type": "gathering",
+    "giver": "lore:historian_maelis",
+    "description": "The stones spoke to the Awoken at the ruins \u2014 now Maelis Vane can bind what they said into a spell tome. Gather 5 lapis lazuli and 3 paper, and learn the first word of the old tongue. Unlocks the path of magic.",
+    "prerequisites": [
+      "echoes_beneath"
+    ],
+    "steps": [
+      "Complete 'Echoes Beneath' so the stones have spoken to you.",
+      "Accept the quest from Maelis Vane in her archive.",
+      "Gather 5 lapis lazuli and 3 paper.",
+      "Return to Maelis and turn them in through her dialogue."
+    ],
+    "objective": {
+      "kind": "gather",
+      "items": [
+        {
+          "id": "minecraft:lapis_lazuli",
+          "count": 5
+        },
+        {
+          "id": "minecraft:paper",
+          "count": 3
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:tome_emberlash",
+          "count": 1
+        }
+      ],
+      "xp_levels": 3,
+      "reputation": 8
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted the_first_word",
+      "on_complete": "lore:quest_completed the_first_word"
+    }
+  }
+}

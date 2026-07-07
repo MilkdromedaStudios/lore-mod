@@ -23,6 +23,10 @@
             "commands": ["/dialogue open @s @initiator blacksmith.quests"]
           },
           {
+            "name": { "rawtext": [{ "text": "§eShow me what the forge sings.§r" }] },
+            "commands": ["/dialogue open @s @initiator blacksmith.shop"]
+          },
+          {
             "name": { "rawtext": [{ "text": "Stay sharp, Brenna." }] },
             "commands": ["/dialogue close @s @initiator"]
           }
@@ -71,6 +75,39 @@
           {
             "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
             "commands": ["/scriptevent lore:quest status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator blacksmith.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "blacksmith.shop",
+        "npc_name": { "rawtext": [{ "text": "§cBrenna Ironsong, Blacksmith§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Ruin-iron, every one — quenched singing. Emeralds keep the coal coming:\n\n§6Emberfang§r — sets what it bites on fire — §a24§r\n§bFrostbite§r — chills foes to a crawl — §a24§r\n§3Wardenspike§r — every strike hardens YOUR hide — §a28§r\n§9Stormcall§r — sometimes the sky answers it — §a40§r\n\nThe rest of my racks? Earned, not sold. Ask about work."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Emberfang (24)§r" }] },
+            "commands": ["/scriptevent lore:shop buy blade_emberfang"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Frostbite (24)§r" }] },
+            "commands": ["/scriptevent lore:shop buy blade_frostbite"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Wardenspike (28)§r" }] },
+            "commands": ["/scriptevent lore:shop buy blade_wardenspike"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Stormcall (40)§r" }] },
+            "commands": ["/scriptevent lore:shop buy blade_stormcall"]
           },
           {
             "name": { "rawtext": [{ "text": "Back." }] },

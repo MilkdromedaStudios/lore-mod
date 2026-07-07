@@ -1,0 +1,40 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "the_captains_gambit",
+    "name": "The Captain's Gambit",
+    "type": "defense",
+    "giver": "lore:captain_roderic",
+    "description": "Roderic wants the Corrupted bled BEFORE the next outbreak, not during it. Thin their muster in the hills: slay 15 Corrupted Raiders, and The Executioner is yours.",
+    "prerequisites": [
+      "steel_for_the_watch"
+    ],
+    "steps": [
+      "Complete 'Steel for the Watch' first.",
+      "Accept the quest from Captain Roderic Hale.",
+      "Slay 15 Corrupted Raiders (raids, outbreaks and ambushes all count).",
+      "The quest completes automatically on the fifteenth kill."
+    ],
+    "objective": {
+      "kind": "kill",
+      "targets": [
+        "lore:corrupted_raider"
+      ],
+      "count": 15
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:blade_executioner",
+          "count": 1
+        }
+      ],
+      "xp_levels": 5,
+      "reputation": 12
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted the_captains_gambit",
+      "on_complete": "lore:quest_completed the_captains_gambit"
+    }
+  }
+}

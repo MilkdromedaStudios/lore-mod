@@ -1,0 +1,45 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "ashes_on_the_road",
+    "name": "Ashes on the Road",
+    "type": "investigation",
+    "giver": "lore:wanderer_fen",
+    "description": "Fen Greenhollow's waystation on the east road has gone dark \u2014 no lantern, no answer, no pigeons. Find what is left of it, and find out why the roads between the hill villages are going quiet.",
+    "prerequisites": [],
+    "steps": [
+      "Accept the quest from Fen Greenhollow when his cart visits Elderfall.",
+      "Travel east along the road and find the Burned Waystation.",
+      "The quest completes automatically at the site; report what you saw."
+    ],
+    "objective": {
+      "kind": "visit",
+      "radius": 10,
+      "sites": [
+        {
+          "label": "Burned Waystation",
+          "dx": 80,
+          "dz": 30
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:blade_venomkiss",
+          "count": 1
+        },
+        {
+          "id": "minecraft:emerald",
+          "count": 6
+        }
+      ],
+      "xp_levels": 3,
+      "reputation": 6
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted ashes_on_the_road",
+      "on_complete": "lore:quest_completed ashes_on_the_road"
+    }
+  }
+}

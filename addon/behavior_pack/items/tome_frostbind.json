@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "lore:tome_frostbind",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.equipment"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "lore_tome_frostbind"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "\u00a7bTome: Frostbind"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:rarity": "epic",
+      "minecraft:cooldown": {
+        "category": "lore_tome_frostbind",
+        "duration": 5.0
+      }
+    }
+  }
+}

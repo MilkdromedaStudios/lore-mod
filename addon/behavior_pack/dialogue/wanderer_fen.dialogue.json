@@ -1,0 +1,124 @@
+{
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "fen.root",
+        "npc_name": { "rawtext": [{ "text": "§aFen Greenhollow, Wandering Peddler§r" }] },
+        "on_open_commands": ["/playsound mob.villager.haggle @initiator ~ ~ ~ 0.5"],
+        "text": {
+          "rawtext": [
+            {
+              "text": "Well met, well met! Fen Greenhollow — peddler, gossip, and the fastest cart on the hill circuit.\n\nI walk the loop: Elderfall, Havenbrook, Thornwick, Cinderford, and back again, every few days, rain or raiders. Mostly raiders, lately. You must be the Awoken everyone's humming about — the §ovillagers§r hum about you, I mean. The other kind hums about something else entirely."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eWhat news from the other villages?§r" }] },
+            "commands": ["/dialogue open @s @initiator fen.lore"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eShow me your wares.§r" }] },
+            "commands": ["/dialogue open @s @initiator fen.shop"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eAnything troubling you, Fen?§r" }] },
+            "commands": ["/dialogue open @s @initiator fen.quests"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Fair roads, Fen." }] },
+            "commands": ["/dialogue close @s @initiator"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "fen.lore",
+        "npc_name": { "rawtext": [{ "text": "§aFen Greenhollow, Wandering Peddler§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Thornwick's doubled its gate watch and pays double for iron. Cinderford's mayor swears the mine hums at night now, and nobody will take the deep shifts.\n\nAnd Havenbrook... Havenbrook didn't open its gate for me last circuit. First time in twenty years. I left a crate of bread on the road and it was still there when I passed back through. §oBread, friend.§r Uneaten. On the hill circuit that's not strange, that's §oimpossible§r.\n\nThe roads are how villages hold hands. Something out there is prying the fingers apart one by one — and Elderfall's the hand that's still squeezing back."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator fen.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "fen.quests",
+        "npc_name": { "rawtext": [{ "text": "§aFen Greenhollow, Wandering Peddler§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Since you ask — §6Ashes on the Road§r. My waystation on the east road went dark: no lantern, no answer, no pigeons. It's where I stable the spare horse and stash the good tea.\n\nGo and look for me? I'd go myself but the cart doesn't corner well under crossbow fire. There's a blade under my seat that says thank you better than I do."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Ashes on the Road§r" }] },
+            "commands": ["/scriptevent lore:quest accept ashes_on_the_road"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
+            "commands": ["/scriptevent lore:quest status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator fen.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "fen.shop",
+        "npc_name": { "rawtext": [{ "text": "§aFen Greenhollow, Wandering Peddler§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "Armor off the racks of four villages — every suit carries its own blessing, and every price is in emeralds, honest as sunrise:\n\n§2Mosshide Jerkin§r — wounds close on their own — §a20§r\n§fGalecloak§r — the wind carries your steps — §a24§r\n§8Duskweave Shroud§r — see through the dark — §a24§r\n§3Tidebinder Scale§r — breathe under water — §a24§r\n§6Emberplate§r — fire cannot touch you — §a30§r\n§dSkydancer Harness§r — leap high, land soft — §a30§r\nBundle of two dozen arrows — §a4§r"
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Mosshide Jerkin (20)§r" }] },
+            "commands": ["/scriptevent lore:shop buy armor_mosshide"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Galecloak (24)§r" }] },
+            "commands": ["/scriptevent lore:shop buy armor_galecloak"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Duskweave Shroud (24)§r" }] },
+            "commands": ["/scriptevent lore:shop buy armor_duskweave"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Tidebinder Scale (24)§r" }] },
+            "commands": ["/scriptevent lore:shop buy armor_tidebinder"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Emberplate (30)§r" }] },
+            "commands": ["/scriptevent lore:shop buy armor_emberplate"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Skydancer Harness (30)§r" }] },
+            "commands": ["/scriptevent lore:shop buy armor_skydancer"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aBuy: Arrow bundle (4)§r" }] },
+            "commands": ["/scriptevent lore:shop buy arrows_bundle"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator fen.root"]
+          }
+        ]
+      }
+    ]
+  }
+}

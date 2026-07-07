@@ -1,0 +1,95 @@
+{
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "captain.root",
+        "npc_name": { "rawtext": [{ "text": "§4Captain Roderic Hale§r" }] },
+        "on_open_commands": ["/playsound random.anvil_land @initiator ~ ~ ~ 0.2"],
+        "text": {
+          "rawtext": [
+            {
+              "text": "Awoken. Good. Saves me walking to find you.\n\nRoderic Hale, captain of the Elderfall watch — all nine of them, four of whom held a spear for the first time last Tuesday. I count days, I drill farmers, and I keep one eye on the hills. §cEvery twentieth day, the seal exhales and the Corrupted march on this square.§r I intend for that to keep being their mistake."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§eWhat happened on your last twentieth day?§r" }] },
+            "commands": ["/dialogue open @s @initiator captain.lore"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§eGive me work, Captain.§r" }] },
+            "commands": ["/dialogue open @s @initiator captain.quests"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bHow long until the next outbreak?§r" }] },
+            "commands": ["/scriptevent lore:outbreak status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Hold the wall, Captain." }] },
+            "commands": ["/dialogue close @s @initiator"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "captain.lore",
+        "npc_name": { "rawtext": [{ "text": "§4Captain Roderic Hale§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "I served twelve years in the lowland legions. I have stood shield-lines against cavalry, fire, and worse. Nothing — §onothing§r — is like the twentieth day.\n\nThey don't shout. They don't break. They come up the hill in step, humming that one low note, and the ones you cut down in the last outbreak are in the front rank of the next one, wearing the same wounds.\n\nLast cycle we lost the west gate for six minutes. Brenna's mail is the only reason I'm here complaining about it. So when I ask you for iron and dead raiders, understand: I am not decorating. §cI am counting days.§r"
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator captain.root"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "captain.quests",
+        "npc_name": { "rawtext": [{ "text": "§4Captain Roderic Hale§r" }] },
+        "text": {
+          "rawtext": [
+            {
+              "text": "In order of how much sleep they cost me:\n\n§6The Silent Village§r — Havenbrook, our sister village southwest, has gone quiet. Walk its gate and its well. Go armed.\n\n§6Steel for the Watch§r — §f20 iron ingots§r and §f12 leather§r so Brenna can armor my militia. First suit off the racks is yours.\n\n§6The Captain's Gambit§r — thin their muster: §f15 Corrupted Raiders§r, before the next twentieth day.\n\n§6Embermarch§r — be in the square when the next outbreak breaks. Be standing when it's done. Dawnbreaker is waiting for whoever manages it."
+            }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: The Silent Village§r" }] },
+            "commands": ["/scriptevent lore:quest accept the_silent_village"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Steel for the Watch§r" }] },
+            "commands": ["/scriptevent lore:quest accept steel_for_the_watch"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bTurn in: Steel for the Watch§r" }] },
+            "commands": ["/scriptevent lore:quest turnin steel_for_the_watch"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: The Captain's Gambit§r" }] },
+            "commands": ["/scriptevent lore:quest accept the_captains_gambit"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§aAccept: Embermarch§r" }] },
+            "commands": ["/scriptevent lore:quest accept embermarch"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "§bMy quest log.§r" }] },
+            "commands": ["/scriptevent lore:quest status"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Back." }] },
+            "commands": ["/dialogue open @s @initiator captain.root"]
+          }
+        ]
+      }
+    ]
+  }
+}

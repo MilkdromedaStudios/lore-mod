@@ -1,0 +1,48 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "steel_for_the_watch",
+    "name": "Steel for the Watch",
+    "type": "raid_preparation",
+    "giver": "lore:captain_roderic",
+    "description": "Roderic's nine-strong militia drills with pitchforks. Bring 20 iron ingots and 12 leather so Brenna can armor the watch before the twentieth day comes \u2014 the first suit off the racks is yours.",
+    "prerequisites": [],
+    "steps": [
+      "Accept the quest from Captain Roderic Hale.",
+      "Gather 20 iron ingots.",
+      "Gather 12 leather.",
+      "Return to Roderic and turn in the materials through his dialogue."
+    ],
+    "objective": {
+      "kind": "gather",
+      "items": [
+        {
+          "id": "minecraft:iron_ingot",
+          "count": 20
+        },
+        {
+          "id": "minecraft:leather",
+          "count": 12
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:armor_watchmans_mail",
+          "count": 1
+        },
+        {
+          "id": "minecraft:emerald",
+          "count": 10
+        }
+      ],
+      "xp_levels": 3,
+      "reputation": 8
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted steel_for_the_watch",
+      "on_complete": "lore:quest_completed steel_for_the_watch"
+    }
+  }
+}

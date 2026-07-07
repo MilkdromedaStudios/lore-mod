@@ -1,0 +1,61 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "the_hollow_crown",
+    "name": "The Hollow Crown",
+    "type": "investigation",
+    "giver": "lore:historian_maelis",
+    "description": "The rewritten glyphs name three far places \u2014 the Crownfall Barrow, the Kneeling Kings, and the Sealed Deep-Gate \u2014 where the Hollow King's broken crown was buried. Someone has been collecting the shards. Find the empty settings and bring word.",
+    "prerequisites": [
+      "whispers_below"
+    ],
+    "steps": [
+      "Complete 'Whispers Below' first.",
+      "Accept the quest from Maelis Vane.",
+      "Visit the Crownfall Barrow far north of the village.",
+      "Visit the Kneeling Kings to the northeast.",
+      "Visit the Sealed Deep-Gate to the east \u2014 and survive its keepers.",
+      "The quest completes automatically at the final site."
+    ],
+    "objective": {
+      "kind": "visit",
+      "radius": 10,
+      "sites": [
+        {
+          "label": "Crownfall Barrow",
+          "dx": -35,
+          "dz": -90
+        },
+        {
+          "label": "The Kneeling Kings",
+          "dx": 60,
+          "dz": -75
+        },
+        {
+          "label": "Sealed Deep-Gate",
+          "dx": 95,
+          "dz": 40,
+          "ambush": 3
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:armor_frostguard",
+          "count": 1
+        },
+        {
+          "id": "lore:armor_stoneheart",
+          "count": 1
+        }
+      ],
+      "xp_levels": 6,
+      "reputation": 15
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted the_hollow_crown",
+      "on_complete": "lore:quest_completed the_hollow_crown"
+    }
+  }
+}

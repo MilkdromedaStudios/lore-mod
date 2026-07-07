@@ -1,0 +1,48 @@
+{
+  "format_version": "1.0.0",
+  "lore:quest": {
+    "id": "the_silent_village",
+    "name": "The Silent Village",
+    "type": "investigation",
+    "giver": "lore:captain_roderic",
+    "description": "Havenbrook, Elderfall's sister village to the southwest, has sent no trader in a month. Walk its gate and its well and learn what silence means on the hill circuit. An ambush waits at the well \u2014 go armed.",
+    "prerequisites": [],
+    "steps": [
+      "Accept the quest from Captain Roderic Hale.",
+      "Travel southwest to Havenbrook Gate.",
+      "Investigate Havenbrook Well \u2014 and survive what wears the militia's coats.",
+      "The quest completes automatically at the well."
+    ],
+    "objective": {
+      "kind": "visit",
+      "radius": 10,
+      "sites": [
+        {
+          "label": "Havenbrook Gate",
+          "dx": -110,
+          "dz": 60
+        },
+        {
+          "label": "Havenbrook Well",
+          "dx": -122,
+          "dz": 74,
+          "ambush": 4
+        }
+      ]
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "lore:blade_galeforce",
+          "count": 1
+        }
+      ],
+      "xp_levels": 4,
+      "reputation": 10
+    },
+    "events": {
+      "on_accept": "lore:quest_accepted the_silent_village",
+      "on_complete": "lore:quest_completed the_silent_village"
+    }
+  }
+}
